@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form - Odin</title>
+</head>
+<body>
+    <section class="background">
+        <img src="ressources/image.jpg" alt="Background-Image">
+        <p>Photo: <a href="https://unsplash.com/@joelfilip">Joel Felipe</a> 
+            on <a href="https://unsplash.com/photos/QwoNAhbmLLo">Unsplash</a>
+            <br>
+            <br>
+            Logo: <a href="http://www.freepik.com"> Designed by rawpixel.com / Freepik</a>
+        </p>
+        <div class="logo">
+            <img src="ressources/logo.png" alt="Spaceship-Logo">
+            <div class="logo_text">
+                <p>Space</p>
+            </div>
+        </div>
+    </section>
+    <main class="main">
+       <div class="hero area">
+            <p>
+                This is not a real online service! You know you need something <br>
+                like this in your life to help you realize your deepest dreams. <br>
+                Sign up <i>now</i> to get started. <br>
+                <br>
+                You <i>know</i> you want to.
+            </p> 
+       </div>
+       <div class="input area">
+            <form action="" method="post">
+                <legend>Let's do this!</legend>
+
+                <div class="form-area">
+                    <fieldset>
+                        <div class="form-element">
+                            <label for="first_name">First Name</label>
+                            <input type="text" id="first_name" name="first_name" minlength="2" maxlength="17"
+                            pattern="[a-zA-Z]+">
+                        </div>
+                        <div class="form-element">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" id="last_name" name="last_name" minlength="2" maxlength="17"
+                            pattern="[a-zA-Z]+"> 
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <div class="form-element">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" minlength="2" maxlength="17">
+                        </div>
+                        <div class="form-element">
+                            <label for="phone_number">Phone Number</label>
+                        <input type="text" id="phone_number" name="phone_number" minlength="2" maxlength="17"
+                        pattern="[0-9 ]+">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <div class="form-element">
+                            <label for="pw">Password</label>
+                            <input type="password" id="pw" name="pw" minlength="1" maxlength="17">
+    
+                        </div>
+                        <div class="form-element">
+                            <label for="pw_confirm">Confirm Password</label>
+                            <input type="password" id="pw_confirm" name="pw_confirm" minlength="1" maxlength="17">
+                        </div>                   
+                    </fieldset>
+                </div>
+
+                
+            </form>
+       </div>
+       <div class="submit area">
+            <button type="submit">Create Account</button>
+            <p>Already have an account? <a href="">Log in</a></p>
+       </div>
+    </main>
+    <script>
+        const PW_INPUTS = document.querySelectorAll("input[type=\'password\']");
+
+        function validatePassword(e){
+            if (!document.querySelector(".error_text")){   
+                if (PW_INPUTS[0].value != PW_INPUTS[1].value){  
+                    const PARENT = e.target.parentNode;           
+                    const ERROR_ELEMENT = document.createElement("p");
+                    ERROR_ELEMENT.textContent = "*Passwords do not match";
+                    ERROR_ELEMENT.classList.add("error_text");
+
+                    PW_INPUTS.forEach(pw => {
+                        pw.classList.add("error");
+                    });
+                    PARENT.appendChild(ERROR_ELEMENT);
+                }
+            }
+            else{
+                if (PW_INPUTS[0].value === PW_INPUTS[1].value){
+                    const ERROR_TEXT = document.querySelector(".form-element>p");
+                    console.dir(ERROR_TEXT)
+                    console.dir(ERROR_TEXT.parentNode.childNodes)
+                    ERROR_TEXT.parentNode.removeChild(ERROR_TEXT);
+                    PW_INPUTS.forEach(pw => {
+                        pw.classList.remove("error");
+                    });
+                }
+            }
+        }
+
+        PW_INPUTS.forEach(pw => {
+            pw.addEventListener("blur", validatePassword);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 1px;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    overflow: hidden;
+}
+
+.background, .background > *{
+    margin: 0;
+}
+
+.background{
+    outline: none;
+    width: 40vw;
+    height: 100vh;
+}
+
+.background > img{
+    
+    width: inherit;
+    height: inherit;
+}
+
+.background > p{
+    position: absolute;
+    bottom: 0;
+    color: white;
+    transform: translateX(75%);
+    margin: 5px;
+}
+
+.background > p > a:visited, .background > p > a:link{
+    color: white;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.area{
+    width: 100%;
+    height: 100%;
+    color: #FF942F;
+    background-color: #0B040C;
+}
+
+.hero{
+    position: relative;
+    overflow: hidden;
+}
+
+.hero > p{
+    position: absolute;
+    font-size: 28px;
+    margin: 60px;
+    top: 40px;
+    color: #4D5073;
+}
+
+legend{
+    margin-top: 20px;
+    margin-left: 60px;
+    font-size: 30px;
+}
+
+.input{
+    background-color: #18090E;
+}
+
+.form-area{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+fieldset{
+    display: flex;
+    margin: 20px;
+    margin-left: 60px;
+    gap: 100px;
+    width: 100%;
+}
+
+fieldset > .form-element{
+    display: flex;
+    width: 33%;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+label{
+    text-transform: uppercase;
+}
+
+input{
+    outline: none;
+    height: 3vh;
+    border: 1px #794543 solid;
+    border-radius: 5px;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 20px;
+    background-color: #502841;
+    color: #DD6B4D;
+}
+
+input:focus{
+    border: 1px blue solid;
+    box-shadow: 1px 1px 3px 1px #44232F;
+}
+
+button[type='submit']{
+    outline: none;
+    border: 1px black solid;
+    border-radius: 10px;
+    background-color: #904F4A;
+    color: #E2D4C7;
+    width: 15vw;
+    height: 5vh;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px black;
+    overflow: hidden;
+
+}
+
+button[type='submit'], .submit > p{
+    margin-top: 60px;
+    margin-left: 60px;
+}
+
+.submit{
+    overflow: hidden;
+    box-shadow: 2px -2px 10px 1px #E5E7EF;
+}
+
+button[type='submit']:hover{
+    background-color: #432326;
+    color: white;
+}
+
+.submit > p{
+    margin-top: 30px;
+    margin-left: 60px;
+    font-size: 20px;
+    color: #C3B4A8;
+}
+
+.submit > p > a:link{
+    color: #FF9719;
+}
+
+.submit > p > a:visited{
+    color: #FF9719;
+}
+
+.error{
+    border-color: red;
+}
+
+.error_text{
+    color: red;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.logo{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    transform: translateY(13.2vh);
+    background-color: rgba(72, 51, 68, 0.63);
+    height: 20vh;
+    width: inherit;
+}
+
+.logo > img{
+    width: 150px;
+    height: auto;
+}
+
+.logo_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_text > p{
+    color: #FCA28A;
+    font-size: 80px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+}
